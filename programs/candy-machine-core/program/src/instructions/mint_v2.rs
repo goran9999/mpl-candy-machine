@@ -159,7 +159,7 @@ pub(crate) fn process_mint<'info>(
 
     let mut creators: Vec<mpl_token_metadata::state::Creator> =
         vec![mpl_token_metadata::state::Creator {
-            address: accounts.authority_pda.key(),
+            address: accounts.first_creator.key(),
             verified: true,
             share: 0,
         }];
@@ -167,7 +167,7 @@ pub(crate) fn process_mint<'info>(
     for c in &candy_machine.data.creators {
         creators.push(mpl_token_metadata::state::Creator {
             address: c.address,
-            verified: false,
+            verified: true,
             share: c.percentage_share,
         });
     }
