@@ -17,17 +17,13 @@
           "name": "candyMachine",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Candy Machine account."
-          ]
+          "docs": ["Candy Machine account."]
         },
         {
           "name": "authority",
           "isMut": false,
           "isSigner": true,
-          "docs": [
-            "Autority of the candy machine."
-          ]
+          "docs": ["Autority of the candy machine."]
         }
       ],
       "args": [
@@ -80,10 +76,7 @@
           "name": "authorityPda",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Authority PDA used to verify minted NFTs to the collection.",
-            ""
-          ]
+          "docs": ["Authority PDA used to verify minted NFTs to the collection.", ""]
         },
         {
           "name": "authority",
@@ -98,36 +91,25 @@
           "name": "payer",
           "isMut": false,
           "isSigner": true,
-          "docs": [
-            "Payer of the transaction."
-          ]
+          "docs": ["Payer of the transaction."]
         },
         {
           "name": "collectionMetadata",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Metadata account of the collection.",
-            ""
-          ]
+          "docs": ["Metadata account of the collection.", ""]
         },
         {
           "name": "collectionMint",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Mint account of the collection.",
-            ""
-          ]
+          "docs": ["Mint account of the collection.", ""]
         },
         {
           "name": "collectionMasterEdition",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Master Edition account of the collection.",
-            ""
-          ]
+          "docs": ["Master Edition account of the collection.", ""]
         },
         {
           "name": "collectionUpdateAuthority",
@@ -142,27 +124,19 @@
           "name": "collectionAuthorityRecord",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Collection authority record. The delegate is used to verify NFTs.",
-            ""
-          ]
+          "docs": ["Collection authority record. The delegate is used to verify NFTs.", ""]
         },
         {
           "name": "tokenMetadataProgram",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Token Metadata program.",
-            ""
-          ]
+          "docs": ["Token Metadata program.", ""]
         },
         {
           "name": "systemProgram",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "System program."
-          ]
+          "docs": ["System program."]
         }
       ],
       "args": [
@@ -212,10 +186,7 @@
           "name": "authorityPda",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Authority PDA used to verify minted NFTs to the collection.",
-            ""
-          ]
+          "docs": ["Authority PDA used to verify minted NFTs to the collection.", ""]
         },
         {
           "name": "authority",
@@ -230,46 +201,32 @@
           "name": "payer",
           "isMut": true,
           "isSigner": true,
-          "docs": [
-            "Payer of the transaction."
-          ]
+          "docs": ["Payer of the transaction."]
         },
         {
           "name": "ruleSet",
           "isMut": false,
           "isSigner": false,
           "isOptional": true,
-          "docs": [
-            "Authorization rule set to be used by minted NFTs.",
-            ""
-          ]
+          "docs": ["Authorization rule set to be used by minted NFTs.", ""]
         },
         {
           "name": "collectionMetadata",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Metadata account of the collection.",
-            ""
-          ]
+          "docs": ["Metadata account of the collection.", ""]
         },
         {
           "name": "collectionMint",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Mint account of the collection.",
-            ""
-          ]
+          "docs": ["Mint account of the collection.", ""]
         },
         {
           "name": "collectionMasterEdition",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Master Edition account of the collection.",
-            ""
-          ]
+          "docs": ["Master Edition account of the collection.", ""]
         },
         {
           "name": "collectionUpdateAuthority",
@@ -284,56 +241,39 @@
           "name": "collectionDelegateRecord",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Metadata delegate record. The delegate is used to verify NFTs.",
-            ""
-          ]
+          "docs": ["Metadata delegate record. The delegate is used to verify NFTs.", ""]
         },
         {
           "name": "tokenMetadataProgram",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Token Metadata program.",
-            ""
-          ]
+          "docs": ["Token Metadata program.", ""]
         },
         {
           "name": "systemProgram",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "System program."
-          ]
+          "docs": ["System program."]
         },
         {
           "name": "sysvarInstructions",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Instructions sysvar account.",
-            ""
-          ]
+          "docs": ["Instructions sysvar account.", ""]
         },
         {
           "name": "authorizationRulesProgram",
           "isMut": false,
           "isSigner": false,
           "isOptional": true,
-          "docs": [
-            "Token Authorization Rules program.",
-            ""
-          ]
+          "docs": ["Token Authorization Rules program.", ""]
         },
         {
           "name": "authorizationRules",
           "isMut": false,
           "isSigner": false,
           "isOptional": true,
-          "docs": [
-            "Token Authorization rules account for the collection metadata (if any).",
-            ""
-          ]
+          "docs": ["Token Authorization rules account for the collection metadata (if any).", ""]
         }
       ],
       "args": [
@@ -382,9 +322,7 @@
           "name": "candyMachine",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Candy machine account."
-          ]
+          "docs": ["Candy machine account."]
         },
         {
           "name": "authorityPda",
@@ -400,43 +338,31 @@
           "name": "mintAuthority",
           "isMut": false,
           "isSigner": true,
-          "docs": [
-            "Candy machine mint authority (mint only allowed for the mint_authority)."
-          ]
+          "docs": ["Candy machine mint authority (mint only allowed for the mint_authority)."]
         },
         {
           "name": "payer",
           "isMut": true,
           "isSigner": true,
-          "docs": [
-            "Payer for the transaction and account allocation (rent)."
-          ]
+          "docs": ["Payer for the transaction and account allocation (rent)."]
         },
         {
           "name": "nftMint",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Mint account of the NFT. The account will be initialized if necessary.",
-            ""
-          ]
+          "docs": ["Mint account of the NFT. The account will be initialized if necessary.", ""]
         },
         {
           "name": "nftMintAuthority",
           "isMut": false,
           "isSigner": true,
-          "docs": [
-            "Mint authority of the NFT. In most cases this will be the owner of the NFT."
-          ]
+          "docs": ["Mint authority of the NFT. In most cases this will be the owner of the NFT."]
         },
         {
           "name": "nftMetadata",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Metadata account of the NFT. This account must be uninitialized.",
-            ""
-          ]
+          "docs": ["Metadata account of the NFT. This account must be uninitialized.", ""]
         },
         {
           "name": "nftMasterEdition",
@@ -462,71 +388,49 @@
           "name": "collectionMint",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Mint account of the collection NFT.",
-            ""
-          ]
+          "docs": ["Mint account of the collection NFT.", ""]
         },
         {
           "name": "collectionMetadata",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Metadata account of the collection NFT.",
-            ""
-          ]
+          "docs": ["Metadata account of the collection NFT.", ""]
         },
         {
           "name": "collectionMasterEdition",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Master edition account of the collection NFT.",
-            ""
-          ]
+          "docs": ["Master edition account of the collection NFT.", ""]
         },
         {
           "name": "collectionUpdateAuthority",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Update authority of the collection NFT.",
-            ""
-          ]
+          "docs": ["Update authority of the collection NFT.", ""]
         },
         {
           "name": "tokenMetadataProgram",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Token Metadata program.",
-            ""
-          ]
+          "docs": ["Token Metadata program.", ""]
         },
         {
           "name": "tokenProgram",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "SPL Token program."
-          ]
+          "docs": ["SPL Token program."]
         },
         {
           "name": "systemProgram",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "System program."
-          ]
+          "docs": ["System program."]
         },
         {
           "name": "recentSlothashes",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "SlotHashes sysvar cluster data.",
-            ""
-          ]
+          "docs": ["SlotHashes sysvar cluster data.", ""]
         }
       ],
       "args": [],
@@ -569,9 +473,7 @@
           "name": "candyMachine",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Candy machine account."
-          ]
+          "docs": ["Candy machine account."]
         },
         {
           "name": "authorityPda",
@@ -587,52 +489,37 @@
           "name": "mintAuthority",
           "isMut": false,
           "isSigner": true,
-          "docs": [
-            "Candy machine mint authority (mint only allowed for the mint_authority)."
-          ]
+          "docs": ["Candy machine mint authority (mint only allowed for the mint_authority)."]
         },
         {
           "name": "payer",
           "isMut": true,
           "isSigner": true,
-          "docs": [
-            "Payer for the transaction and account allocation (rent)."
-          ]
+          "docs": ["Payer for the transaction and account allocation (rent)."]
         },
         {
           "name": "nftOwner",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "NFT account owner.",
-            ""
-          ]
+          "docs": ["NFT account owner.", ""]
         },
         {
           "name": "nftMint",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Mint account of the NFT. The account will be initialized if necessary.",
-            ""
-          ]
+          "docs": ["Mint account of the NFT. The account will be initialized if necessary.", ""]
         },
         {
           "name": "nftMintAuthority",
           "isMut": false,
           "isSigner": true,
-          "docs": [
-            "Mint authority of the NFT. In most cases this will be the owner of the NFT."
-          ]
+          "docs": ["Mint authority of the NFT. In most cases this will be the owner of the NFT."]
         },
         {
           "name": "nftMetadata",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Metadata account of the NFT. This account must be uninitialized.",
-            ""
-          ]
+          "docs": ["Metadata account of the NFT. This account must be uninitialized.", ""]
         },
         {
           "name": "nftMasterEdition",
@@ -648,137 +535,95 @@
           "isMut": true,
           "isSigner": false,
           "isOptional": true,
-          "docs": [
-            "Destination token account (required for pNFT).",
-            ""
-          ]
+          "docs": ["Destination token account (required for pNFT).", ""]
         },
         {
           "name": "tokenRecord",
           "isMut": true,
           "isSigner": false,
           "isOptional": true,
-          "docs": [
-            "Token record (required for pNFT).",
-            ""
-          ]
+          "docs": ["Token record (required for pNFT).", ""]
         },
         {
           "name": "collectionDelegateRecord",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Collection authority or metadata delegate record.",
-            ""
-          ]
+          "docs": ["Collection authority or metadata delegate record.", ""]
         },
         {
           "name": "collectionMint",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Mint account of the collection NFT.",
-            ""
-          ]
+          "docs": ["Mint account of the collection NFT.", ""]
         },
         {
           "name": "collectionMetadata",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Metadata account of the collection NFT.",
-            ""
-          ]
+          "docs": ["Metadata account of the collection NFT.", ""]
         },
         {
           "name": "collectionMasterEdition",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Master edition account of the collection NFT.",
-            ""
-          ]
+          "docs": ["Master edition account of the collection NFT.", ""]
         },
         {
           "name": "collectionUpdateAuthority",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Update authority of the collection NFT.",
-            ""
-          ]
+          "docs": ["Update authority of the collection NFT.", ""]
         },
         {
           "name": "tokenMetadataProgram",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Token Metadata program.",
-            ""
-          ]
+          "docs": ["Token Metadata program.", ""]
         },
         {
           "name": "splTokenProgram",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "SPL Token program."
-          ]
+          "docs": ["SPL Token program."]
         },
         {
           "name": "splAtaProgram",
           "isMut": false,
           "isSigner": false,
           "isOptional": true,
-          "docs": [
-            "SPL Associated Token program."
-          ]
+          "docs": ["SPL Associated Token program."]
         },
         {
           "name": "systemProgram",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "System program."
-          ]
+          "docs": ["System program."]
         },
         {
           "name": "sysvarInstructions",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Instructions sysvar account.",
-            ""
-          ]
+          "docs": ["Instructions sysvar account.", ""]
         },
         {
           "name": "recentSlothashes",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "SlotHashes sysvar cluster data.",
-            ""
-          ]
+          "docs": ["SlotHashes sysvar cluster data.", ""]
         },
         {
           "name": "authorizationRulesProgram",
           "isMut": false,
           "isSigner": false,
           "isOptional": true,
-          "docs": [
-            "Token Authorization Rules program.",
-            ""
-          ]
+          "docs": ["Token Authorization Rules program.", ""]
         },
         {
           "name": "authorizationRules",
           "isMut": false,
           "isSigner": false,
           "isOptional": true,
-          "docs": [
-            "Token Authorization rules account for the collection metadata (if any).",
-            ""
-          ]
+          "docs": ["Token Authorization rules account for the collection metadata (if any).", ""]
         }
       ],
       "args": [],
@@ -799,17 +644,13 @@
           "name": "candyMachine",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Candy Machine account."
-          ]
+          "docs": ["Candy Machine account."]
         },
         {
           "name": "authority",
           "isMut": false,
           "isSigner": true,
-          "docs": [
-            "Autority of the candy machine."
-          ]
+          "docs": ["Autority of the candy machine."]
         }
       ],
       "args": [
@@ -847,122 +688,85 @@
           "name": "candyMachine",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Candy Machine account."
-          ]
+          "docs": ["Candy Machine account."]
         },
         {
           "name": "authority",
           "isMut": false,
           "isSigner": true,
-          "docs": [
-            "Candy Machine authority."
-          ]
+          "docs": ["Candy Machine authority."]
         },
         {
           "name": "authorityPda",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Authority PDA.",
-            ""
-          ]
+          "docs": ["Authority PDA.", ""]
         },
         {
           "name": "payer",
           "isMut": false,
           "isSigner": true,
-          "docs": [
-            "Payer of the transaction."
-          ]
+          "docs": ["Payer of the transaction."]
         },
         {
           "name": "collectionMint",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Mint account of the collection.",
-            ""
-          ]
+          "docs": ["Mint account of the collection.", ""]
         },
         {
           "name": "collectionMetadata",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Metadata account of the collection.",
-            ""
-          ]
+          "docs": ["Metadata account of the collection.", ""]
         },
         {
           "name": "collectionAuthorityRecord",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Collection authority record.",
-            ""
-          ]
+          "docs": ["Collection authority record.", ""]
         },
         {
           "name": "newCollectionUpdateAuthority",
           "isMut": true,
           "isSigner": true,
-          "docs": [
-            "Update authority of the new collection NFT."
-          ]
+          "docs": ["Update authority of the new collection NFT."]
         },
         {
           "name": "newCollectionMetadata",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "New collection metadata.",
-            ""
-          ]
+          "docs": ["New collection metadata.", ""]
         },
         {
           "name": "newCollectionMint",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "New collection mint.",
-            ""
-          ]
+          "docs": ["New collection mint.", ""]
         },
         {
           "name": "newCollectionMasterEdition",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "New collection master edition.",
-            ""
-          ]
+          "docs": ["New collection master edition.", ""]
         },
         {
           "name": "newCollectionAuthorityRecord",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "New collection authority record.",
-            ""
-          ]
+          "docs": ["New collection authority record.", ""]
         },
         {
           "name": "tokenMetadataProgram",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Token Metadata program.",
-            ""
-          ]
+          "docs": ["Token Metadata program.", ""]
         },
         {
           "name": "systemProgram",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "System program."
-          ]
+          "docs": ["System program."]
         }
       ],
       "args": [],
@@ -1000,160 +804,111 @@
           "name": "candyMachine",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Candy Machine account."
-          ]
+          "docs": ["Candy Machine account."]
         },
         {
           "name": "authority",
           "isMut": false,
           "isSigner": true,
-          "docs": [
-            "Candy Machine authority."
-          ]
+          "docs": ["Candy Machine authority."]
         },
         {
           "name": "authorityPda",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Authority PDA.",
-            ""
-          ]
+          "docs": ["Authority PDA.", ""]
         },
         {
           "name": "payer",
           "isMut": true,
           "isSigner": true,
-          "docs": [
-            "Payer of the transaction."
-          ]
+          "docs": ["Payer of the transaction."]
         },
         {
           "name": "collectionUpdateAuthority",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Update authority of the collection.",
-            ""
-          ]
+          "docs": ["Update authority of the collection.", ""]
         },
         {
           "name": "collectionMint",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Mint account of the collection.",
-            ""
-          ]
+          "docs": ["Mint account of the collection.", ""]
         },
         {
           "name": "collectionMetadata",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Metadata account of the collection.",
-            ""
-          ]
+          "docs": ["Metadata account of the collection.", ""]
         },
         {
           "name": "collectionDelegateRecord",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Collection authority or metadata delegate record.",
-            ""
-          ]
+          "docs": ["Collection authority or metadata delegate record.", ""]
         },
         {
           "name": "newCollectionUpdateAuthority",
           "isMut": false,
           "isSigner": true,
-          "docs": [
-            "Update authority of the new collection NFT."
-          ]
+          "docs": ["Update authority of the new collection NFT."]
         },
         {
           "name": "newCollectionMint",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "New collection mint.",
-            ""
-          ]
+          "docs": ["New collection mint.", ""]
         },
         {
           "name": "newCollectionMetadata",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "New collection metadata.",
-            ""
-          ]
+          "docs": ["New collection metadata.", ""]
         },
         {
           "name": "newCollectionMasterEdition",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "New collection master edition.",
-            ""
-          ]
+          "docs": ["New collection master edition.", ""]
         },
         {
           "name": "newCollectionDelegateRecord",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "New metadata delegate record.",
-            ""
-          ]
+          "docs": ["New metadata delegate record.", ""]
         },
         {
           "name": "tokenMetadataProgram",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Token Metadata program.",
-            ""
-          ]
+          "docs": ["Token Metadata program.", ""]
         },
         {
           "name": "systemProgram",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "System program."
-          ]
+          "docs": ["System program."]
         },
         {
           "name": "sysvarInstructions",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Instructions sysvar account.",
-            ""
-          ]
+          "docs": ["Instructions sysvar account.", ""]
         },
         {
           "name": "authorizationRulesProgram",
           "isMut": false,
           "isSigner": false,
           "isOptional": true,
-          "docs": [
-            "Token Authorization Rules program.",
-            ""
-          ]
+          "docs": ["Token Authorization Rules program.", ""]
         },
         {
           "name": "authorizationRules",
           "isMut": false,
           "isSigner": false,
           "isOptional": true,
-          "docs": [
-            "Token Authorization rules account for the collection metadata (if any).",
-            ""
-          ]
+          "docs": ["Token Authorization rules account for the collection metadata (if any).", ""]
         }
       ],
       "args": [],
@@ -1175,25 +930,19 @@
           "name": "candyMachine",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Candy Machine account."
-          ]
+          "docs": ["Candy Machine account."]
         },
         {
           "name": "authority",
           "isMut": false,
           "isSigner": true,
-          "docs": [
-            "Candy Machine authority"
-          ]
+          "docs": ["Candy Machine authority"]
         },
         {
           "name": "mintAuthority",
           "isMut": false,
           "isSigner": true,
-          "docs": [
-            "New candy machine authority"
-          ]
+          "docs": ["New candy machine authority"]
         }
       ],
       "args": [],
@@ -1226,135 +975,95 @@
           "name": "candyMachine",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Candy Machine account."
-          ]
+          "docs": ["Candy Machine account."]
         },
         {
           "name": "authority",
           "isMut": false,
           "isSigner": true,
-          "docs": [
-            "Candy Machine authority."
-          ]
+          "docs": ["Candy Machine authority."]
         },
         {
           "name": "authorityPda",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Authority PDA.",
-            ""
-          ]
+          "docs": ["Authority PDA.", ""]
         },
         {
           "name": "payer",
           "isMut": true,
           "isSigner": true,
-          "docs": [
-            "Payer of the transaction."
-          ]
+          "docs": ["Payer of the transaction."]
         },
         {
           "name": "ruleSet",
           "isMut": false,
           "isSigner": false,
           "isOptional": true,
-          "docs": [
-            "Authorization rule set to be used by minted NFTs.",
-            ""
-          ]
+          "docs": ["Authorization rule set to be used by minted NFTs.", ""]
         },
         {
           "name": "collectionDelegateRecord",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Collection metadata delegate record.",
-            ""
-          ]
+          "docs": ["Collection metadata delegate record.", ""]
         },
         {
           "name": "collectionMint",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Collection mint.",
-            ""
-          ]
+          "docs": ["Collection mint.", ""]
         },
         {
           "name": "collectionMetadata",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Collection metadata.",
-            ""
-          ]
+          "docs": ["Collection metadata.", ""]
         },
         {
           "name": "collectionAuthorityRecord",
           "isMut": true,
           "isSigner": false,
           "isOptional": true,
-          "docs": [
-            "Collection authority record.",
-            ""
-          ]
+          "docs": ["Collection authority record.", ""]
         },
         {
           "name": "collectionUpdateAuthority",
           "isMut": false,
           "isSigner": true,
-          "docs": [
-            "Collection update authority."
-          ]
+          "docs": ["Collection update authority."]
         },
         {
           "name": "tokenMetadataProgram",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Token Metadata program.",
-            ""
-          ]
+          "docs": ["Token Metadata program.", ""]
         },
         {
           "name": "systemProgram",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "System program."
-          ]
+          "docs": ["System program."]
         },
         {
           "name": "sysvarInstructions",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Instructions sysvar account.",
-            ""
-          ]
+          "docs": ["Instructions sysvar account.", ""]
         },
         {
           "name": "authorizationRulesProgram",
           "isMut": false,
           "isSigner": false,
           "isOptional": true,
-          "docs": [
-            "Token Authorization Rules program.",
-            ""
-          ]
+          "docs": ["Token Authorization Rules program.", ""]
         },
         {
           "name": "authorizationRules",
           "isMut": false,
           "isSigner": false,
           "isOptional": true,
-          "docs": [
-            "Token Authorization rules account for the collection metadata (if any).",
-            ""
-          ]
+          "docs": ["Token Authorization rules account for the collection metadata (if any).", ""]
         }
       ],
       "args": [
@@ -1380,17 +1089,13 @@
           "name": "candyMachine",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Candy Machine account."
-          ]
+          "docs": ["Candy Machine account."]
         },
         {
           "name": "authority",
           "isMut": false,
           "isSigner": true,
-          "docs": [
-            "Authority of the candy machine."
-          ]
+          "docs": ["Authority of the candy machine."]
         }
       ],
       "args": [
@@ -1418,17 +1123,13 @@
           "name": "candyMachine",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Candy Machine acccount."
-          ]
+          "docs": ["Candy Machine acccount."]
         },
         {
           "name": "authority",
           "isMut": true,
           "isSigner": true,
-          "docs": [
-            "Authority of the candy machine."
-          ]
+          "docs": ["Authority of the candy machine."]
         }
       ],
       "args": [],
@@ -1438,73 +1139,52 @@
   "accounts": [
     {
       "name": "CandyMachine",
-      "docs": [
-        "Candy machine state and config data."
-      ],
+      "docs": ["Candy machine state and config data."],
       "type": {
         "kind": "struct",
         "fields": [
           {
             "name": "version",
-            "docs": [
-              "Version of the account."
-            ],
+            "docs": ["Version of the account."],
             "type": {
               "defined": "AccountVersion"
             }
           },
           {
             "name": "tokenStandard",
-            "docs": [
-              "Token standard to mint NFTs."
-            ],
+            "docs": ["Token standard to mint NFTs."],
             "type": "u8"
           },
           {
             "name": "features",
-            "docs": [
-              "Features flags."
-            ],
+            "docs": ["Features flags."],
             "type": {
-              "array": [
-                "u8",
-                6
-              ]
+              "array": ["u8", 6]
             }
           },
           {
             "name": "authority",
-            "docs": [
-              "Authority address."
-            ],
+            "docs": ["Authority address."],
             "type": "publicKey"
           },
           {
             "name": "mintAuthority",
-            "docs": [
-              "Authority address allowed to mint from the candy machine."
-            ],
+            "docs": ["Authority address allowed to mint from the candy machine."],
             "type": "publicKey"
           },
           {
             "name": "collectionMint",
-            "docs": [
-              "The collection mint for the candy machine."
-            ],
+            "docs": ["The collection mint for the candy machine."],
             "type": "publicKey"
           },
           {
             "name": "itemsRedeemed",
-            "docs": [
-              "Number of assets redeemed."
-            ],
+            "docs": ["Number of assets redeemed."],
             "type": "u64"
           },
           {
             "name": "data",
-            "docs": [
-              "Candy machine configuration data."
-            ],
+            "docs": ["Candy machine configuration data."],
             "type": {
               "defined": "CandyMachineData"
             }
@@ -1516,52 +1196,38 @@
   "types": [
     {
       "name": "CandyMachineData",
-      "docs": [
-        "Candy machine configuration data."
-      ],
+      "docs": ["Candy machine configuration data."],
       "type": {
         "kind": "struct",
         "fields": [
           {
             "name": "itemsAvailable",
-            "docs": [
-              "Number of assets available"
-            ],
+            "docs": ["Number of assets available"],
             "type": "u64"
           },
           {
             "name": "symbol",
-            "docs": [
-              "Symbol for the asset"
-            ],
+            "docs": ["Symbol for the asset"],
             "type": "string"
           },
           {
             "name": "sellerFeeBasisPoints",
-            "docs": [
-              "Secondary sales royalty basis points (0-10000)"
-            ],
+            "docs": ["Secondary sales royalty basis points (0-10000)"],
             "type": "u16"
           },
           {
             "name": "maxSupply",
-            "docs": [
-              "Max supply of each individual asset (default 0)"
-            ],
+            "docs": ["Max supply of each individual asset (default 0)"],
             "type": "u64"
           },
           {
             "name": "isMutable",
-            "docs": [
-              "Indicates if the asset is mutable or not (default yes)"
-            ],
+            "docs": ["Indicates if the asset is mutable or not (default yes)"],
             "type": "bool"
           },
           {
             "name": "creators",
-            "docs": [
-              "List of creators"
-            ],
+            "docs": ["List of creators"],
             "type": {
               "vec": {
                 "defined": "Creator"
@@ -1570,9 +1236,7 @@
           },
           {
             "name": "configLineSettings",
-            "docs": [
-              "Config line settings"
-            ],
+            "docs": ["Config line settings"],
             "type": {
               "option": {
                 "defined": "ConfigLineSettings"
@@ -1581,9 +1245,7 @@
           },
           {
             "name": "hiddenSettings",
-            "docs": [
-              "Hidden setttings"
-            ],
+            "docs": ["Hidden setttings"],
             "type": {
               "option": {
                 "defined": "HiddenSettings"
@@ -1600,16 +1262,12 @@
         "fields": [
           {
             "name": "address",
-            "docs": [
-              "Pubkey address"
-            ],
+            "docs": ["Pubkey address"],
             "type": "publicKey"
           },
           {
             "name": "verified",
-            "docs": [
-              "Whether the creator is verified or not"
-            ],
+            "docs": ["Whether the creator is verified or not"],
             "type": "bool"
           },
           {
@@ -1621,36 +1279,25 @@
     },
     {
       "name": "HiddenSettings",
-      "docs": [
-        "Hidden settings for large mints used with off-chain data."
-      ],
+      "docs": ["Hidden settings for large mints used with off-chain data."],
       "type": {
         "kind": "struct",
         "fields": [
           {
             "name": "name",
-            "docs": [
-              "Asset prefix name"
-            ],
+            "docs": ["Asset prefix name"],
             "type": "string"
           },
           {
             "name": "uri",
-            "docs": [
-              "Shared URI"
-            ],
+            "docs": ["Shared URI"],
             "type": "string"
           },
           {
             "name": "hash",
-            "docs": [
-              "Hash of the hidden settings file"
-            ],
+            "docs": ["Hash of the hidden settings file"],
             "type": {
-              "array": [
-                "u8",
-                32
-              ]
+              "array": ["u8", 32]
             }
           }
         ]
@@ -1658,45 +1305,33 @@
     },
     {
       "name": "ConfigLineSettings",
-      "docs": [
-        "Config line settings to allocate space for individual name + URI."
-      ],
+      "docs": ["Config line settings to allocate space for individual name + URI."],
       "type": {
         "kind": "struct",
         "fields": [
           {
             "name": "prefixName",
-            "docs": [
-              "Common name prefix"
-            ],
+            "docs": ["Common name prefix"],
             "type": "string"
           },
           {
             "name": "nameLength",
-            "docs": [
-              "Length of the remaining part of the name"
-            ],
+            "docs": ["Length of the remaining part of the name"],
             "type": "u32"
           },
           {
             "name": "prefixUri",
-            "docs": [
-              "Common URI prefix"
-            ],
+            "docs": ["Common URI prefix"],
             "type": "string"
           },
           {
             "name": "uriLength",
-            "docs": [
-              "Length of the remaining part of the URI"
-            ],
+            "docs": ["Length of the remaining part of the URI"],
             "type": "u32"
           },
           {
             "name": "isSequential",
-            "docs": [
-              "Indicates whether to use a senquential index generator or not"
-            ],
+            "docs": ["Indicates whether to use a senquential index generator or not"],
             "type": "bool"
           }
         ]
@@ -1704,24 +1339,18 @@
     },
     {
       "name": "ConfigLine",
-      "docs": [
-        "Config line struct for storing asset (NFT) data pre-mint."
-      ],
+      "docs": ["Config line struct for storing asset (NFT) data pre-mint."],
       "type": {
         "kind": "struct",
         "fields": [
           {
             "name": "name",
-            "docs": [
-              "Name of the asset."
-            ],
+            "docs": ["Name of the asset."],
             "type": "string"
           },
           {
             "name": "uri",
-            "docs": [
-              "URI to JSON metadata."
-            ],
+            "docs": ["URI to JSON metadata."],
             "type": "string"
           }
         ]
@@ -1729,9 +1358,7 @@
     },
     {
       "name": "AccountVersion",
-      "docs": [
-        "Account versioning."
-      ],
+      "docs": ["Account versioning."],
       "type": {
         "kind": "enum",
         "variants": [
@@ -1898,7 +1525,7 @@
     }
   ],
   "metadata": {
-    "address": "CndyV3LdqHUfDLmE5naZjVN8rBZz4tqhdefbAnjHG3JR",
+    "address": "CFzdVwhuEen1o3ZZSUkMRdx7Z4kFZKAQw9CyqKt6BFHY",
     "origin": "anchor",
     "binaryVersion": "0.26.0",
     "libVersion": "0.26.0"

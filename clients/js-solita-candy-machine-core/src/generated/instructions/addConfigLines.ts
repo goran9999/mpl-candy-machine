@@ -65,7 +65,7 @@ export const addConfigLinesInstructionDiscriminator = [223, 50, 224, 227, 151, 8
 export function createAddConfigLinesInstruction(
   accounts: AddConfigLinesInstructionAccounts,
   args: AddConfigLinesInstructionArgs,
-  programId = new web3.PublicKey('CndyV3LdqHUfDLmE5naZjVN8rBZz4tqhdefbAnjHG3JR'),
+  programId = new web3.PublicKey('CFzdVwhuEen1o3ZZSUkMRdx7Z4kFZKAQw9CyqKt6BFHY'),
 ) {
   const [data] = addConfigLinesStruct.serialize({
     instructionDiscriminator: addConfigLinesInstructionDiscriminator,

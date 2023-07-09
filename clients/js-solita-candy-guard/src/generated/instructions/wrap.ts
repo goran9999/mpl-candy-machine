@@ -49,7 +49,7 @@ export const wrapInstructionDiscriminator = [178, 40, 10, 189, 228, 129, 186, 14
  */
 export function createWrapInstruction(
   accounts: WrapInstructionAccounts,
-  programId = new web3.PublicKey('Guard1JwRhJkVH6XZhzoYxeBVQe872VH6QggF4BWmS9g'),
+  programId = new web3.PublicKey('364Dz7e1KReCfVyz4n6jozmcdyKAoGnZ87zLkBqCat4T'),
 ) {
   const [data] = wrapStruct.serialize({
     instructionDiscriminator: wrapInstructionDiscriminator,

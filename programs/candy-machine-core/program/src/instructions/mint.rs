@@ -13,6 +13,7 @@ pub fn mint<'info>(ctx: Context<'_, '_, '_, 'info, Mint<'info>>) -> Result<()> {
 
     let accounts = MintAccounts {
         spl_ata_program: None,
+        first_creator: ctx.accounts.first_creator.to_account_info(),
         authority_pda: ctx.accounts.authority_pda.to_account_info(),
         collection_delegate_record: ctx.accounts.collection_authority_record.to_account_info(),
         collection_master_edition: ctx.accounts.collection_master_edition.to_account_info(),
@@ -47,6 +48,10 @@ pub struct Mint<'info> {
     /// Candy machine account.
     #[account(mut, has_one = mint_authority)]
     candy_machine: Box<Account<'info, CandyMachine>>,
+
+    ///CHECK: seeds checked
+    #[account(seeds=[b"derug",candy_machine.key().as_ref()],bump)]
+    first_creator: UncheckedAccount<'info>,
 
     /// Candy machine authority account. This is the account that holds a delegate
     /// to verify an item into the collection.

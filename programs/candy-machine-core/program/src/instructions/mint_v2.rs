@@ -19,7 +19,7 @@ use crate::{
 
 /// Accounts to mint an NFT.
 pub(crate) struct MintAccounts<'info> {
-    pub(crate) first_creator: Account<'info>,
+    pub(crate) first_creator: AccountInfo<'info>,
     pub(crate) authority_pda: AccountInfo<'info>,
     pub(crate) payer: AccountInfo<'info>,
     pub(crate) nft_owner: AccountInfo<'info>,
@@ -44,7 +44,7 @@ pub(crate) struct MintAccounts<'info> {
 
 pub fn mint_v2<'info>(ctx: Context<'_, '_, '_, 'info, MintV2<'info>>) -> Result<()> {
     let accounts = MintAccounts {
-        first_creator: ctx.accounts.first_creator,
+        first_creator: ctx.accounts.first_creator.to_account_info(),
         spl_ata_program: ctx
             .accounts
             .spl_ata_program
@@ -652,7 +652,7 @@ pub struct MintV2<'info> {
     candy_machine: Box<Account<'info, CandyMachine>>,
 
     ///CHECK: account seeds checked
-    #[account(mut,seeds=[b"derug",candy_machine.key().as_ref()])]
+    #[account(mut,seeds=[b"derug",candy_machine.key().as_ref()],bump)]
     first_creator: UncheckedAccount<'info>,
 
     /// Candy machine authority account. This is the account that holds a delegate

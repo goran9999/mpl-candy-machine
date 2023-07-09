@@ -13,12 +13,12 @@ module.exports = {
     programs: [
       {
         label: "Candy Machine Core",
-        programId: "CndyV3LdqHUfDLmE5naZjVN8rBZz4tqhdefbAnjHG3JR",
+        programId: "CFzdVwhuEen1o3ZZSUkMRdx7Z4kFZKAQw9CyqKt6BFHY",
         deployPath: getProgram("mpl_candy_machine_core.so"),
       },
       {
         label: "Candy Guard",
-        programId: "Guard1JwRhJkVH6XZhzoYxeBVQe872VH6QggF4BWmS9g",
+        programId: "364Dz7e1KReCfVyz4n6jozmcdyKAoGnZ87zLkBqCat4T",
         deployPath: getProgram("mpl_candy_guard.so"),
       },
       {

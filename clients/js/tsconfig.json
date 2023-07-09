@@ -12,6 +12,7 @@
     "moduleResolution": "node",
     "noEmit": false,
     "preserveWatchOutput": true,
+    "noImplicitAny": false,
     "emitDeclarationOnly": false,
     "importHelpers": false,
     "strict": true,

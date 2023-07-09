@@ -99,7 +99,7 @@ export class CandyMachine implements CandyMachineArgs {
    * @param programId - the program that owns the accounts we are filtering
    */
   static gpaBuilder(
-    programId: web3.PublicKey = new web3.PublicKey('CndyV3LdqHUfDLmE5naZjVN8rBZz4tqhdefbAnjHG3JR'),
+    programId: web3.PublicKey = new web3.PublicKey('CFzdVwhuEen1o3ZZSUkMRdx7Z4kFZKAQw9CyqKt6BFHY'),
   ) {
     return beetSolana.GpaBuilder.fromStruct(programId, candyMachineBeet);
   }

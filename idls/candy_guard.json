@@ -4,9 +4,7 @@
   "instructions": [
     {
       "name": "initialize",
-      "docs": [
-        "Create a new candy guard account."
-      ],
+      "docs": ["Create a new candy guard account."],
       "accounts": [
         {
           "name": "candyGuard",
@@ -43,9 +41,7 @@
     },
     {
       "name": "mint",
-      "docs": [
-        "Mint an NFT from a candy machine wrapped in the candy guard."
-      ],
+      "docs": ["Mint an NFT from a candy machine wrapped in the candy guard."],
       "accounts": [
         {
           "name": "candyGuard",
@@ -158,59 +154,43 @@
     },
     {
       "name": "mintV2",
-      "docs": [
-        "Mint an NFT from a candy machine wrapped in the candy guard."
-      ],
+      "docs": ["Mint an NFT from a candy machine wrapped in the candy guard."],
       "accounts": [
         {
           "name": "candyGuard",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Candy Guard account."
-          ]
+          "docs": ["Candy Guard account."]
         },
         {
           "name": "candyMachineProgram",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Candy Machine program account.",
-            ""
-          ]
+          "docs": ["Candy Machine program account.", ""]
         },
         {
           "name": "candyMachine",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Candy machine account."
-          ]
+          "docs": ["Candy machine account."]
         },
         {
           "name": "candyMachineAuthorityPda",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Candy Machine authority account.",
-            ""
-          ]
+          "docs": ["Candy Machine authority account.", ""]
         },
         {
           "name": "payer",
           "isMut": true,
           "isSigner": true,
-          "docs": [
-            "Payer for the mint (SOL) fees."
-          ]
+          "docs": ["Payer for the mint (SOL) fees."]
         },
         {
           "name": "minter",
           "isMut": true,
           "isSigner": true,
-          "docs": [
-            "Minter account for validation and non-SOL fees."
-          ]
+          "docs": ["Minter account for validation and non-SOL fees."]
         },
         {
           "name": "nftMint",
@@ -258,127 +238,88 @@
           "isMut": true,
           "isSigner": false,
           "isOptional": true,
-          "docs": [
-            "Destination token account (required for pNFT).",
-            ""
-          ]
+          "docs": ["Destination token account (required for pNFT).", ""]
         },
         {
           "name": "tokenRecord",
           "isMut": true,
           "isSigner": false,
           "isOptional": true,
-          "docs": [
-            "Token record (required for pNFT).",
-            ""
-          ]
+          "docs": ["Token record (required for pNFT).", ""]
         },
         {
           "name": "collectionDelegateRecord",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Collection authority or metadata delegate record.",
-            ""
-          ]
+          "docs": ["Collection authority or metadata delegate record.", ""]
         },
         {
           "name": "collectionMint",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Mint account of the collection NFT.",
-            ""
-          ]
+          "docs": ["Mint account of the collection NFT.", ""]
         },
         {
           "name": "collectionMetadata",
           "isMut": true,
           "isSigner": false,
-          "docs": [
-            "Metadata account of the collection NFT.",
-            ""
-          ]
+          "docs": ["Metadata account of the collection NFT.", ""]
         },
         {
           "name": "collectionMasterEdition",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Master edition account of the collection NFT.",
-            ""
-          ]
+          "docs": ["Master edition account of the collection NFT.", ""]
         },
         {
           "name": "collectionUpdateAuthority",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Update authority of the collection NFT.",
-            ""
-          ]
+          "docs": ["Update authority of the collection NFT.", ""]
         },
         {
           "name": "tokenMetadataProgram",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Token Metadata program.",
-            ""
-          ]
+          "docs": ["Token Metadata program.", ""]
         },
         {
           "name": "splTokenProgram",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "SPL Token program."
-          ]
+          "docs": ["SPL Token program."]
         },
         {
           "name": "splAtaProgram",
           "isMut": false,
           "isSigner": false,
           "isOptional": true,
-          "docs": [
-            "SPL Associated Token program."
-          ]
+          "docs": ["SPL Associated Token program."]
         },
         {
           "name": "systemProgram",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "System program."
-          ]
+          "docs": ["System program."]
         },
         {
           "name": "sysvarInstructions",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "Instructions sysvar account.",
-            ""
-          ]
+          "docs": ["Instructions sysvar account.", ""]
         },
         {
           "name": "recentSlothashes",
           "isMut": false,
           "isSigner": false,
-          "docs": [
-            "SlotHashes sysvar cluster data.",
-            ""
-          ]
+          "docs": ["SlotHashes sysvar cluster data.", ""]
         },
         {
           "name": "authorizationRulesProgram",
           "isMut": false,
           "isSigner": false,
           "isOptional": true,
-          "docs": [
-            "Token Authorization Rules program.",
-            ""
-          ]
+          "docs": ["Token Authorization Rules program.", ""]
         },
         {
           "name": "authorizationRules",
@@ -406,9 +347,7 @@
     },
     {
       "name": "route",
-      "docs": [
-        "Route the transaction to a guard instruction."
-      ],
+      "docs": ["Route the transaction to a guard instruction."],
       "accounts": [
         {
           "name": "candyGuard",
@@ -443,9 +382,7 @@
     },
     {
       "name": "setAuthority",
-      "docs": [
-        "Set a new authority of the candy guard."
-      ],
+      "docs": ["Set a new authority of the candy guard."],
       "accounts": [
         {
           "name": "candyGuard",
@@ -502,9 +439,7 @@
     },
     {
       "name": "update",
-      "docs": [
-        "Update the candy guard configuration."
-      ],
+      "docs": ["Update the candy guard configuration."],
       "accounts": [
         {
           "name": "candyGuard",
@@ -536,9 +471,7 @@
     },
     {
       "name": "withdraw",
-      "docs": [
-        "Withdraw the rent SOL from the candy guard account."
-      ],
+      "docs": ["Withdraw the rent SOL from the candy guard account."],
       "accounts": [
         {
           "name": "candyGuard",
@@ -592,31 +525,23 @@
   "accounts": [
     {
       "name": "FreezeEscrow",
-      "docs": [
-        "PDA to store the frozen funds."
-      ],
+      "docs": ["PDA to store the frozen funds."],
       "type": {
         "kind": "struct",
         "fields": [
           {
             "name": "candyGuard",
-            "docs": [
-              "Candy guard address associated with this escrow."
-            ],
+            "docs": ["Candy guard address associated with this escrow."],
             "type": "publicKey"
           },
           {
             "name": "candyMachine",
-            "docs": [
-              "Candy machine address associated with this escrow."
-            ],
+            "docs": ["Candy machine address associated with this escrow."],
             "type": "publicKey"
           },
           {
             "name": "frozenCount",
-            "docs": [
-              "Number of NFTs frozen."
-            ],
+            "docs": ["Number of NFTs frozen."],
             "type": "u64"
           },
           {
@@ -639,9 +564,7 @@
           },
           {
             "name": "destination",
-            "docs": [
-              "The destination address for the frozen fund to go to."
-            ],
+            "docs": ["The destination address for the frozen fund to go to."],
             "type": "publicKey"
           },
           {
@@ -680,9 +603,7 @@
   "types": [
     {
       "name": "AddressGate",
-      "docs": [
-        "Guard that restricts access to a specific address."
-      ],
+      "docs": ["Guard that restricts access to a specific address."],
       "type": {
         "kind": "struct",
         "fields": [
@@ -709,16 +630,12 @@
         "fields": [
           {
             "name": "id",
-            "docs": [
-              "Unique identifier of the allocation."
-            ],
+            "docs": ["Unique identifier of the allocation."],
             "type": "u8"
           },
           {
             "name": "limit",
-            "docs": [
-              "The limit of the allocation."
-            ],
+            "docs": ["The limit of the allocation."],
             "type": "u32"
           }
         ]
@@ -726,9 +643,7 @@
     },
     {
       "name": "AllocationTracker",
-      "docs": [
-        "PDA to track the number of mints."
-      ],
+      "docs": ["PDA to track the number of mints."],
       "type": {
         "kind": "struct",
         "fields": [
@@ -754,14 +669,9 @@
         "fields": [
           {
             "name": "merkleRoot",
-            "docs": [
-              "Merkle root of the addresses allowed to mint."
-            ],
+            "docs": ["Merkle root of the addresses allowed to mint."],
             "type": {
-              "array": [
-                "u8",
-                32
-              ]
+              "array": ["u8", 32]
             }
           }
         ]
@@ -769,9 +679,7 @@
     },
     {
       "name": "AllowListProof",
-      "docs": [
-        "PDA to track whether an address has been validated or not."
-      ],
+      "docs": ["PDA to track whether an address has been validated or not."],
       "type": {
         "kind": "struct",
         "fields": [
@@ -809,9 +717,7 @@
     },
     {
       "name": "EndDate",
-      "docs": [
-        "Guard that sets a specific date for the mint to stop."
-      ],
+      "docs": ["Guard that sets a specific date for the mint to stop."],
       "type": {
         "kind": "struct",
         "fields": [
@@ -900,9 +806,7 @@
         "fields": [
           {
             "name": "gatekeeperNetwork",
-            "docs": [
-              "The network for the gateway token required"
-            ],
+            "docs": ["The network for the gateway token required"],
             "type": "publicKey"
           },
           {
@@ -932,16 +836,12 @@
         "fields": [
           {
             "name": "id",
-            "docs": [
-              "Unique identifier of the mint limit."
-            ],
+            "docs": ["Unique identifier of the mint limit."],
             "type": "u8"
           },
           {
             "name": "limit",
-            "docs": [
-              "Limit of mints per individual address."
-            ],
+            "docs": ["Limit of mints per individual address."],
             "type": "u16"
           }
         ]
@@ -949,9 +849,7 @@
     },
     {
       "name": "MintCounter",
-      "docs": [
-        "PDA to track the number of mints for an individual address."
-      ],
+      "docs": ["PDA to track the number of mints for an individual address."],
       "type": {
         "kind": "struct",
         "fields": [
@@ -1099,9 +997,7 @@
     },
     {
       "name": "StartDate",
-      "docs": [
-        "Guard that sets a specific start date for the mint."
-      ],
+      "docs": ["Guard that sets a specific start date for the mint."],
       "type": {
         "kind": "struct",
         "fields": [
@@ -1239,26 +1135,20 @@
     },
     {
       "name": "RouteArgs",
-      "docs": [
-        "Arguments for a route transaction."
-      ],
+      "docs": ["Arguments for a route transaction."],
       "type": {
         "kind": "struct",
         "fields": [
           {
             "name": "guard",
-            "docs": [
-              "The target guard type."
-            ],
+            "docs": ["The target guard type."],
             "type": {
               "defined": "GuardType"
             }
           },
           {
             "name": "data",
-            "docs": [
-              "Arguments for the guard instruction."
-            ],
+            "docs": ["Arguments for the guard instruction."],
             "type": "bytes"
           }
         ]
@@ -1312,9 +1202,7 @@
     },
     {
       "name": "GuardSet",
-      "docs": [
-        "The set of guards available."
-      ],
+      "docs": ["The set of guards available."],
       "type": {
         "kind": "struct",
         "fields": [
@@ -1353,9 +1241,7 @@
           },
           {
             "name": "startDate",
-            "docs": [
-              "Start data guard (controls when minting is allowed)."
-            ],
+            "docs": ["Start data guard (controls when minting is allowed)."],
             "type": {
               "option": {
                 "defined": "StartDate"
@@ -1386,9 +1272,7 @@
           },
           {
             "name": "gatekeeper",
-            "docs": [
-              "Gatekeeper guard (captcha challenge)."
-            ],
+            "docs": ["Gatekeeper guard (captcha challenge)."],
             "type": {
               "option": {
                 "defined": "Gatekeeper"
@@ -1397,9 +1281,7 @@
           },
           {
             "name": "endDate",
-            "docs": [
-              "End date guard (set an end date to stop the mint)."
-            ],
+            "docs": ["End date guard (set an end date to stop the mint)."],
             "type": {
               "option": {
                 "defined": "EndDate"
@@ -1408,9 +1290,7 @@
           },
           {
             "name": "allowList",
-            "docs": [
-              "Allow list guard (curated list of allowed addresses)."
-            ],
+            "docs": ["Allow list guard (curated list of allowed addresses)."],
             "type": {
               "option": {
                 "defined": "AllowList"
@@ -1430,9 +1310,7 @@
           },
           {
             "name": "nftPayment",
-            "docs": [
-              "NFT Payment (charge an NFT in order to mint)."
-            ],
+            "docs": ["NFT Payment (charge an NFT in order to mint)."],
             "type": {
               "option": {
                 "defined": "NftPayment"
@@ -1474,9 +1352,7 @@
           },
           {
             "name": "nftBurn",
-            "docs": [
-              "NFT burn guard (burn a specified NFT)."
-            ],
+            "docs": ["NFT burn guard (burn a specified NFT)."],
             "type": {
               "option": {
                 "defined": "NftBurn"
@@ -1571,9 +1447,7 @@
     },
     {
       "name": "GuardType",
-      "docs": [
-        "Available guard types."
-      ],
+      "docs": ["Available guard types."],
       "type": {
         "kind": "enum",
         "variants": [
@@ -1907,7 +1781,7 @@
     }
   ],
   "metadata": {
-    "address": "Guard1JwRhJkVH6XZhzoYxeBVQe872VH6QggF4BWmS9g",
+    "address": "364Dz7e1KReCfVyz4n6jozmcdyKAoGnZ87zLkBqCat4T",
     "origin": "anchor",
     "binaryVersion": "0.27.0",
     "libVersion": "0.27.0"

@@ -71,7 +71,7 @@ export function wrap(
   // Program ID.
   const programId = context.programs.getPublicKey(
     'mplCandyGuard',
-    'Guard1JwRhJkVH6XZhzoYxeBVQe872VH6QggF4BWmS9g'
+    '364Dz7e1KReCfVyz4n6jozmcdyKAoGnZ87zLkBqCat4T'
   );
 
   // Resolved inputs.
@@ -94,7 +94,7 @@ export function wrap(
       : ([
           context.programs.getPublicKey(
             'mplCandyMachine',
-            'CndyV3LdqHUfDLmE5naZjVN8rBZz4tqhdefbAnjHG3JR'
+            'CFzdVwhuEen1o3ZZSUkMRdx7Z4kFZKAQw9CyqKt6BFHY'
           ),
           false,
         ] as const)

@@ -95,7 +95,7 @@ export function addConfigLines(
   // Program ID.
   const programId = context.programs.getPublicKey(
     'mplCandyMachineCore',
-    'CndyV3LdqHUfDLmE5naZjVN8rBZz4tqhdefbAnjHG3JR'
+    'CFzdVwhuEen1o3ZZSUkMRdx7Z4kFZKAQw9CyqKt6BFHY'
   );
 
   // Resolved inputs.

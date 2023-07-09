@@ -67,7 +67,7 @@ export const routeInstructionDiscriminator = [229, 23, 203, 151, 122, 227, 173, 
 export function createRouteInstruction(
   accounts: RouteInstructionAccounts,
   args: RouteInstructionArgs,
-  programId = new web3.PublicKey('Guard1JwRhJkVH6XZhzoYxeBVQe872VH6QggF4BWmS9g'),
+  programId = new web3.PublicKey('364Dz7e1KReCfVyz4n6jozmcdyKAoGnZ87zLkBqCat4T'),
 ) {
   const [data] = routeStruct.serialize({
     instructionDiscriminator: routeInstructionDiscriminator,
