@@ -6,7 +6,7 @@ use mpl_candy_machine_core::{AccountVersion, CandyMachine};
 
 use crate::{
     guards::{CandyGuardError, EvaluationContext},
-    state::{CandyGuard, DERUG_PROGRAM, SEED},
+    state::{CandyGuard, SEED},
 };
 
 use super::{mint_v2::process_mint, MintAccounts, Token};

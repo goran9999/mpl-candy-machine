@@ -6,7 +6,7 @@ use solana_program::{instruction::Instruction, program::invoke_signed};
 
 use crate::{
     guards::{CandyGuardError, EvaluationContext},
-    state::{CandyGuard, CandyGuardData, GuardSet, DATA_OFFSET, DERUG_PROGRAM, SEED},
+    state::{CandyGuard, CandyGuardData, GuardSet, DATA_OFFSET, SEED},
     utils::cmp_pubkeys,
 };
 

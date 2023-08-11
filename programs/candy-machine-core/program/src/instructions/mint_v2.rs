@@ -15,7 +15,7 @@ use solana_program::{
 };
 
 use crate::{
-    constants::{AUTHORITY_SEED, DERUG_PROGRAM, EMPTY_STR, HIDDEN_SECTION, NULL_STRING},
+    constants::{AUTHORITY_SEED, EMPTY_STR, HIDDEN_SECTION, NULL_STRING},
     utils::*,
     AccountVersion, CandyError, CandyMachine, ConfigLine,
 };
