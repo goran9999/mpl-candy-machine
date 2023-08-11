@@ -172,6 +172,7 @@ export class InitTransactions {
     payer: Keypair,
     data: program.CandyMachineData,
     tokenStandard: TokenStandard,
+    authorityPda: PublicKey,
     handler: PayerTransactionHandler,
     connection: Connection,
     ruleSet: PublicKey | null = null,
@@ -186,11 +187,6 @@ export class InitTransactions {
     });
 
     const [, candyMachine] = await this.getKeypair('Candy Machine Account');
-
-    const authorityPda = metaplex
-      .candyMachines()
-      .pdas()
-      .authority({ candyMachine: candyMachine.publicKey });
 
     await amman.addr.addLabel('Collection Mint', collection.address);
 

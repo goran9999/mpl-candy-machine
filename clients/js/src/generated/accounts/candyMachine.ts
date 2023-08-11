@@ -64,11 +64,11 @@ export async function fetchCandyMachine(
   publicKey: PublicKey | Pda,
   options?: RpcGetAccountOptions
 ): Promise<CandyMachine> {
-  const maybeAccount = await context.rpc.getAccount(
+  const maybeAccount = (await context.rpc.getAccount(
     toPublicKey(publicKey, false),
     options
-  );
-  assertAccountExists(maybeAccount, 'CandyMachine');
+  )) as RpcAccount;
+
   return deserializeCandyMachine(maybeAccount);
 }
 

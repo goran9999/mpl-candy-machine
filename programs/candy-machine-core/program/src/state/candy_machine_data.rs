@@ -113,21 +113,21 @@ impl CandyMachineData {
                 return err!(CandyError::ExceededLengthError);
             }
         } else if let Some(config_line) = &self.config_line_settings {
-            let expected = replace_patterns(
-                config_line.prefix_name.clone(),
-                self.items_available as usize,
-            );
-            if MAX_NAME_LENGTH < (expected.len() + config_line.name_length as usize) {
-                return err!(CandyError::ExceededLengthError);
-            }
+            // let expected = replace_patterns(
+            //     config_line.prefix_name.clone(),
+            //     self.items_available as usize,
+            // );
+            // if MAX_NAME_LENGTH < (expected.len() + config_line.name_length as usize) {
+            //     return err!(CandyError::ExceededLengthError);
+            // }
 
-            let expected = replace_patterns(
-                config_line.prefix_uri.clone(),
-                self.items_available as usize,
-            );
-            if MAX_URI_LENGTH < (expected.len() + config_line.uri_length as usize) {
-                return err!(CandyError::ExceededLengthError);
-            }
+            // let expected = replace_patterns(
+            //     config_line.prefix_uri.clone(),
+            //     self.items_available as usize,
+            // );
+            // if MAX_URI_LENGTH < (expected.len() + config_line.uri_length as usize) {
+            //     return err!(CandyError::ExceededLengthError);
+            // }
         } else {
             return err!(CandyError::MissingConfigLinesSettings);
         }

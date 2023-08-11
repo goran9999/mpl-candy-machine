@@ -9,36 +9,57 @@ use mpl_token_metadata::{
     },
     state::{AssetData, Collection, Metadata, PrintSupply, TokenMetadataAccount, TokenStandard},
 };
-use solana_program::{program::invoke_signed, sysvar};
+use solana_program::{
+    program::{invoke, invoke_signed},
+    sysvar,
+};
 
 use crate::{
-    constants::{AUTHORITY_SEED, EMPTY_STR, HIDDEN_SECTION, NULL_STRING},
+    constants::{AUTHORITY_SEED, DERUG_PROGRAM, EMPTY_STR, HIDDEN_SECTION, NULL_STRING},
     utils::*,
     AccountVersion, CandyError, CandyMachine, ConfigLine,
 };
 
 /// Accounts to mint an NFT.
 pub(crate) struct MintAccounts<'info> {
+    ///CHECK
     pub(crate) first_creator: AccountInfo<'info>,
+    ///CHECK
     pub(crate) authority_pda: AccountInfo<'info>,
+    ///CHECK
     pub(crate) payer: AccountInfo<'info>,
+    ///CHECK
     pub(crate) nft_owner: AccountInfo<'info>,
+    ///CHECK
     pub(crate) nft_mint: AccountInfo<'info>,
-    pub(crate) nft_mint_authority: AccountInfo<'info>,
+    ///CHECK
     pub(crate) nft_metadata: AccountInfo<'info>,
+    ///CHECK
     pub(crate) nft_master_edition: AccountInfo<'info>,
+    ///CHECK
     pub(crate) token: Option<AccountInfo<'info>>,
+    ///CHECK
     pub(crate) token_record: Option<AccountInfo<'info>>,
+    ///CHECK
     pub(crate) collection_delegate_record: AccountInfo<'info>,
+    ///CHECK
     pub(crate) collection_mint: AccountInfo<'info>,
+    ///CHECK
     pub(crate) collection_metadata: AccountInfo<'info>,
+    ///CHECK
     pub(crate) collection_master_edition: AccountInfo<'info>,
+    ///CHECK
     pub(crate) collection_update_authority: AccountInfo<'info>,
+    ///CHECK
     pub(crate) token_metadata_program: AccountInfo<'info>,
+    ///CHECK
     pub(crate) spl_token_program: AccountInfo<'info>,
+    ///CHECK
     pub(crate) spl_ata_program: Option<AccountInfo<'info>>,
+    ///CHECK
     pub(crate) system_program: AccountInfo<'info>,
     pub(crate) sysvar_instructions: Option<AccountInfo<'info>>,
+    ///CHECK
     pub(crate) recent_slothashes: AccountInfo<'info>,
 }
 
@@ -60,7 +81,6 @@ pub fn mint_v2<'info>(ctx: Context<'_, '_, '_, 'info, MintV2<'info>>) -> Result<
         nft_master_edition: ctx.accounts.nft_master_edition.to_account_info(),
         nft_metadata: ctx.accounts.nft_metadata.to_account_info(),
         nft_mint: ctx.accounts.nft_mint.to_account_info(),
-        nft_mint_authority: ctx.accounts.nft_mint_authority.to_account_info(),
         payer: ctx.accounts.payer.to_account_info(),
         recent_slothashes: ctx.accounts.recent_slothashes.to_account_info(),
         system_program: ctx.accounts.system_program.to_account_info(),
@@ -160,14 +180,14 @@ pub(crate) fn process_mint<'info>(
     let mut creators: Vec<mpl_token_metadata::state::Creator> =
         vec![mpl_token_metadata::state::Creator {
             address: accounts.first_creator.key(),
-            verified: true,
+            verified: false,
             share: 0,
         }];
 
     for c in &candy_machine.data.creators {
         creators.push(mpl_token_metadata::state::Creator {
             address: c.address,
-            verified: true,
+            verified: false,
             share: c.percentage_share,
         });
     }
@@ -273,13 +293,11 @@ pub fn get_config_line(
         EMPTY_STR.to_string()
     };
 
-    let complete_name = replace_patterns(settings.prefix_name.clone(), value_to_use) + &name;
-    let complete_uri = replace_patterns(settings.prefix_uri.clone(), value_to_use) + &uri;
+    //DERUG-TODO:check
+    // let complete_name = replace_patterns(settings.prefix_name.clone(), value_to_use) + &name;
+    // let complete_uri = replace_patterns(settings.prefix_uri.clone(), value_to_use) + &uri;
 
-    Ok(ConfigLine {
-        name: complete_name,
-        uri: complete_uri,
-    })
+    Ok(ConfigLine { name, uri })
 }
 
 /// Creates the metadata accounts and mint a new token.
@@ -319,7 +337,7 @@ fn create_and_mint<'info>(
     let create_ix = CreateBuilder::new()
         .metadata(accounts.nft_metadata.key())
         .mint(accounts.nft_mint.key())
-        .authority(accounts.nft_mint_authority.key())
+        .authority(accounts.payer.key())
         .payer(accounts.payer.key())
         .update_authority(accounts.authority_pda.key())
         .master_edition(accounts.nft_master_edition.key())
@@ -340,7 +358,7 @@ fn create_and_mint<'info>(
     let create_infos = vec![
         accounts.nft_metadata.to_account_info(),
         accounts.nft_mint.to_account_info(),
-        accounts.nft_mint_authority.to_account_info(),
+        accounts.payer.to_account_info(),
         accounts.payer.to_account_info(),
         accounts.authority_pda.to_account_info(),
         accounts.nft_master_edition.to_account_info(),
@@ -498,8 +516,32 @@ fn create_and_mint<'info>(
         accounts.system_program.to_account_info(),
         sysvar_instructions_info.to_account_info(),
     ];
+    invoke_signed(&verify_ix, &verify_infos, &[&authority_seeds])?;
 
-    invoke_signed(&verify_ix, &verify_infos, &[&authority_seeds]).map_err(|error| error.into())
+    let verify_creator_ix = VerifyBuilder::new()
+        .authority(accounts.first_creator.key())
+        .metadata(accounts.nft_metadata.key())
+        .collection_mint(accounts.collection_mint.key())
+        .collection_metadata(accounts.collection_metadata.key())
+        .collection_master_edition(accounts.collection_master_edition.key())
+        .build(VerificationArgs::CreatorV1)
+        .map_err(|_| CandyError::InstructionBuilderFailed)?
+        .instruction();
+
+    let verify_creator_infos = vec![
+        accounts.first_creator.to_account_info(),
+        accounts.collection_delegate_record.to_account_info(),
+        accounts.nft_metadata.to_account_info(),
+        accounts.collection_mint.to_account_info(),
+        accounts.collection_metadata.to_account_info(),
+        accounts.collection_master_edition.to_account_info(),
+        accounts.system_program.to_account_info(),
+        sysvar_instructions_info.to_account_info(),
+    ];
+
+    invoke(&verify_creator_ix, &verify_creator_infos)?;
+
+    Ok(())
 }
 
 /// Creates the metadata accounts
@@ -514,7 +556,7 @@ fn create<'info>(
     let metadata_infos = vec![
         accounts.nft_metadata.to_account_info(),
         accounts.nft_mint.to_account_info(),
-        accounts.nft_mint_authority.to_account_info(),
+        accounts.payer.to_account_info(),
         accounts.payer.to_account_info(),
         accounts.authority_pda.to_account_info(),
         accounts.nft_master_edition.to_account_info(),
@@ -525,7 +567,7 @@ fn create<'info>(
     let master_edition_infos = vec![
         accounts.nft_master_edition.to_account_info(),
         accounts.nft_mint.to_account_info(),
-        accounts.nft_mint_authority.to_account_info(),
+        accounts.payer.to_account_info(),
         accounts.payer.to_account_info(),
         accounts.nft_metadata.to_account_info(),
         accounts.token_metadata_program.to_account_info(),
@@ -542,7 +584,7 @@ fn create<'info>(
             accounts.token_metadata_program.key(),
             accounts.nft_metadata.key(),
             accounts.nft_mint.key(),
-            accounts.nft_mint_authority.key(),
+            accounts.payer.key(),
             accounts.payer.key(),
             accounts.authority_pda.key(),
             config_line.name,
@@ -566,7 +608,7 @@ fn create<'info>(
             accounts.nft_master_edition.key(),
             accounts.nft_mint.key(),
             accounts.authority_pda.key(),
-            accounts.nft_mint_authority.key(),
+            accounts.payer.key(),
             accounts.nft_metadata.key(),
             accounts.payer.key(),
             Some(candy_machine.data.max_supply),
@@ -651,19 +693,20 @@ pub struct MintV2<'info> {
     #[account(mut, has_one = mint_authority)]
     candy_machine: Box<Account<'info, CandyMachine>>,
 
-    ///CHECK: account seeds checked
-    #[account(mut,seeds=[b"derug",candy_machine.key().as_ref()],bump)]
-    first_creator: UncheckedAccount<'info>,
-
     /// Candy machine authority account. This is the account that holds a delegate
     /// to verify an item into the collection.
     ///
     /// CHECK: account constraints checked in account trait
-    #[account(mut, seeds = [AUTHORITY_SEED.as_bytes(), candy_machine.key().as_ref()], bump)]
+    #[account(mut, seeds = [AUTHORITY_SEED.as_bytes(),candy_machine.key().as_ref()], bump)]
+    ///CHECK: seeds checked
     authority_pda: UncheckedAccount<'info>,
 
     /// Candy machine mint authority (mint only allowed for the mint_authority).
     mint_authority: Signer<'info>,
+    ///CHECK
+    #[account()]
+    ///CHECK:seeds checked
+    first_creator: Signer<'info>,
 
     /// Payer for the transaction and account allocation (rent).
     #[account(mut)]
@@ -681,7 +724,7 @@ pub struct MintV2<'info> {
     nft_mint: UncheckedAccount<'info>,
 
     /// Mint authority of the NFT. In most cases this will be the owner of the NFT.
-    nft_mint_authority: Signer<'info>,
+    // nft_mint_authority: Signer<'info>,
 
     /// Metadata account of the NFT. This account must be uninitialized.
     ///

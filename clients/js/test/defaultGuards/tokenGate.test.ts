@@ -53,6 +53,7 @@ test('it allows minting when the payer owns a specific token', async (t) => {
         candyMachine,
         nftMint: mint,
         collectionMint,
+        firstCreator: '' as any,
         collectionUpdateAuthority: umi.identity.publicKey,
         mintArgs: {
           tokenGate: some({ mint: tokenMint.publicKey }),
@@ -99,6 +100,7 @@ test('it allows minting even when the payer is different from the minter', async
         candyMachine,
         nftMint: mint,
         minter,
+        firstCreator: '' as any,
         collectionMint,
         collectionUpdateAuthority: umi.identity.publicKey,
         mintArgs: {
@@ -145,6 +147,7 @@ test('it allows minting when the payer owns multiple tokens from a specific mint
         candyMachine,
         nftMint: mint,
         collectionMint,
+        firstCreator: '' as any,
         collectionUpdateAuthority: umi.identity.publicKey,
         mintArgs: {
           tokenGate: some({ mint: tokenMint.publicKey }),
@@ -200,6 +203,7 @@ test('it forbids minting when the owner does not own any required tokens', async
         candyMachine,
         nftMint: mint,
         collectionMint,
+        firstCreator: '' as any,
         collectionUpdateAuthority: umi.identity.publicKey,
         mintArgs: {
           tokenGate: some({ mint: tokenMint.publicKey }),
@@ -244,6 +248,7 @@ test('it forbids minting when the owner does not own enough tokens', async (t) =
       mintV2(umi, {
         candyMachine,
         nftMint: mint,
+        firstCreator: '' as any,
         collectionMint,
         collectionUpdateAuthority: umi.identity.publicKey,
         mintArgs: {
@@ -290,6 +295,7 @@ test('it charges a bot tax when trying to mint without the right amount of token
       mintV2(umi, {
         candyMachine,
         nftMint: mint,
+        firstCreator: '' as any,
         collectionMint,
         collectionUpdateAuthority: umi.identity.publicKey,
         mintArgs: {

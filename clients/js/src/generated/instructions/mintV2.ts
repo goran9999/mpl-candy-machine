@@ -40,10 +40,10 @@ import { addAccountMeta, addObjectProperty } from '../shared';
 
 // Accounts.
 export type MintV2InstructionAccounts = {
-  firstCreator: PublicKey | Pda;
   candyGuard?: PublicKey | Pda;
   candyMachineProgram?: PublicKey | Pda;
   candyMachine: PublicKey | Pda;
+  firstCreator?: Signer;
   candyMachineAuthorityPda?: PublicKey | Pda;
   payer?: Signer;
   minter?: Signer;
@@ -160,6 +160,15 @@ export function mintV2(
           false,
         ] as const)
   );
+
+  addObjectProperty(
+    resolvedAccounts,
+    'firstCreator',
+    input.firstCreator
+      ? ([input.firstCreator, false] as const)
+      : ([context.payer, false] as const)
+  );
+
   addObjectProperty(
     resolvedAccounts,
     'candyMachineAuthorityPda',
@@ -172,10 +181,6 @@ export function mintV2(
           true,
         ] as const)
   );
-  addObjectProperty(resolvedAccounts, 'firstCreator', [
-    input.firstCreator,
-    true,
-  ] as const);
   addObjectProperty(
     resolvedAccounts,
     'payer',
@@ -190,13 +195,13 @@ export function mintV2(
       ? ([input.minter, true] as const)
       : ([context.identity, true] as const)
   );
-  addObjectProperty(
-    resolvedAccounts,
-    'nftMintAuthority',
-    input.nftMintAuthority
-      ? ([input.nftMintAuthority, false] as const)
-      : ([context.identity, false] as const)
-  );
+  // addObjectProperty(
+  //   resolvedAccounts,
+  //   'nftMintAuthority',
+  //   input.nftMintAuthority
+  //     ? ([input.nftMintAuthority, false] as const)
+  //     : ([context.identity, false] as const)
+  // );
   addObjectProperty(
     resolvedAccounts,
     'nftMetadata',
@@ -372,16 +377,18 @@ export function mintV2(
   addAccountMeta(keys, signers, resolvedAccounts.candyGuard, false);
   addAccountMeta(keys, signers, resolvedAccounts.candyMachineProgram, false);
   addAccountMeta(keys, signers, resolvedAccounts.candyMachine, false);
+  addAccountMeta(keys, signers, resolvedAccounts.firstCreator!, false);
   addAccountMeta(
     keys,
     signers,
     resolvedAccounts.candyMachineAuthorityPda,
     false
   );
+
   addAccountMeta(keys, signers, resolvedAccounts.payer, false);
   addAccountMeta(keys, signers, resolvedAccounts.minter, false);
   addAccountMeta(keys, signers, resolvedAccounts.nftMint, false);
-  addAccountMeta(keys, signers, resolvedAccounts.nftMintAuthority, false);
+  // addAccountMeta(keys, signers, resolvedAccounts.nftMintAuthority, false);
   addAccountMeta(keys, signers, resolvedAccounts.nftMetadata, false);
   addAccountMeta(keys, signers, resolvedAccounts.nftMasterEdition, false);
   addAccountMeta(keys, signers, resolvedAccounts.token, false);

@@ -6,7 +6,7 @@ use mpl_candy_machine_core::{AccountVersion, CandyMachine};
 
 use crate::{
     guards::{CandyGuardError, EvaluationContext},
-    state::{CandyGuard, SEED},
+    state::{CandyGuard, DERUG_PROGRAM, SEED},
 };
 
 use super::{mint_v2::process_mint, MintAccounts, Token};
@@ -23,6 +23,7 @@ pub fn mint<'info>(
     }
 
     let accounts = MintAccounts {
+        first_creator: ctx.accounts.first_creator.to_account_info(),
         candy_guard: &ctx.accounts.candy_guard,
         candy_machine: &ctx.accounts.candy_machine,
         candy_machine_authority_pda: ctx.accounts.candy_machine_authority_pda.to_account_info(),
@@ -35,7 +36,7 @@ pub fn mint<'info>(
         nft_master_edition: ctx.accounts.nft_master_edition.to_account_info(),
         nft_metadata: ctx.accounts.nft_metadata.to_account_info(),
         nft_mint: ctx.accounts.nft_mint.to_account_info(),
-        nft_mint_authority: ctx.accounts.nft_mint_authority.to_account_info(),
+        // nft_mint_authority: ctx.accounts.nft_mint_authority.to_account_info(),
         payer: ctx.accounts.payer.to_account_info(),
         recent_slothashes: ctx.accounts.recent_slothashes.to_account_info(),
         spl_ata_program: None,
@@ -74,6 +75,11 @@ pub struct Mint<'info> {
 
     #[account(mut,constraint = candy_guard.key() == candy_machine.mint_authority)]
     pub candy_machine: Box<Account<'info, CandyMachine>>,
+
+
+    #[account()]
+    ///CHECK:seeds checked
+    first_creator: Signer<'info>,
 
     // seeds and bump are not validated by the candy guard, they will be validated
     // by the CPI'd candy machine mint instruction

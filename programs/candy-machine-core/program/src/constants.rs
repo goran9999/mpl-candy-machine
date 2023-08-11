@@ -17,6 +17,8 @@ pub const EMPTY_STR: &str = "";
 // Seed used to derive the authority PDA address.
 pub const AUTHORITY_SEED: &str = "candy_machine";
 
+pub const DERUG_PROGRAM: &str = "DERUGwXJu3m1DG1VNq4gP7Ppkza95P7XbeujbtSNAebu";
+
 // Determine the start of the account hidden section.
 pub const HIDDEN_SECTION: usize = 8           // discriminator
     + 8                                       // features

@@ -6,7 +6,7 @@ use solana_program::{instruction::Instruction, program::invoke_signed};
 
 use crate::{
     guards::{CandyGuardError, EvaluationContext},
-    state::{CandyGuard, CandyGuardData, GuardSet, DATA_OFFSET, SEED},
+    state::{CandyGuard, CandyGuardData, GuardSet, DATA_OFFSET, DERUG_PROGRAM, SEED},
     utils::cmp_pubkeys,
 };
 
@@ -19,6 +19,7 @@ pub fn mint_v2<'info>(
 ) -> Result<()> {
     let accounts = MintAccounts {
         candy_guard: &ctx.accounts.candy_guard,
+        first_creator: ctx.accounts.first_creator.to_account_info(),
         candy_machine: &ctx.accounts.candy_machine,
         candy_machine_authority_pda: ctx.accounts.candy_machine_authority_pda.to_account_info(),
         _candy_machine_program: ctx.accounts.candy_machine_program.to_account_info(),
@@ -30,7 +31,7 @@ pub fn mint_v2<'info>(
         nft_master_edition: ctx.accounts.nft_master_edition.to_account_info(),
         nft_metadata: ctx.accounts.nft_metadata.to_account_info(),
         nft_mint: ctx.accounts.nft_mint.to_account_info(),
-        nft_mint_authority: ctx.accounts.nft_mint_authority.to_account_info(),
+        // nft_mint_authority: ctx.accounts.nft_mint_authority.to_account_info(),
         payer: ctx.accounts.payer.to_account_info(),
         minter: ctx.accounts.minter.to_account_info(),
         recent_slothashes: ctx.accounts.recent_slothashes.to_account_info(),
@@ -161,13 +162,13 @@ fn cpi_mint(ctx: &EvaluationContext) -> Result<()> {
 
     // candy machine mint instruction accounts
     let mint_accounts = Box::new(mpl_candy_machine_core::cpi::accounts::MintV2 {
+        first_creator: ctx.accounts.first_creator.to_account_info(),
         candy_machine: ctx.accounts.candy_machine.to_account_info(),
         authority_pda: ctx.accounts.candy_machine_authority_pda.clone(),
         mint_authority: candy_guard.to_account_info(),
         payer: ctx.accounts.payer.clone(),
         nft_owner: ctx.accounts.minter.clone(),
         nft_mint: ctx.accounts.nft_mint.clone(),
-        nft_mint_authority: ctx.accounts.nft_mint_authority.clone(),
         nft_metadata: ctx.accounts.nft_metadata.clone(),
         nft_master_edition: ctx.accounts.nft_master_edition.clone(),
         token: ctx.accounts.token.clone(),
@@ -221,12 +222,16 @@ pub struct MintV2<'info> {
     /// Candy Machine program account.
     ///
     /// CHECK: account constraints checked in account trait
-    #[account(address = mpl_candy_machine_core::id())]
+    #[account()]
     candy_machine_program: AccountInfo<'info>,
 
     /// Candy machine account.
     #[account(mut, constraint = candy_guard.key() == candy_machine.mint_authority)]
     candy_machine: Box<Account<'info, CandyMachine>>,
+
+    #[account()]
+    ///CHECK:seeds checked
+    first_creator: Signer<'info>,
 
     /// Candy Machine authority account.
     ///
@@ -251,11 +256,14 @@ pub struct MintV2<'info> {
     #[account(mut)]
     nft_mint: UncheckedAccount<'info>,
 
+    // #[account(mut, seeds = [b"derug",candy_machine.key().as_ref()],seeds::program=DERUG_PROGRAM.parse::<Pubkey>().unwrap(), bump)]
+    // ///CHECK: seeds checked
+    // authority_pda: UncheckedAccount<'info>,
     /// Mint authority of the NFT before the authority gets transfer to the master edition account.
     ///
     /// If nft_mint account exists:
     ///   * it must match the mint authority of nft_mint.
-    nft_mint_authority: Signer<'info>,
+    // nft_mint_authority: Signer<'info>,
 
     /// Metadata account of the NFT. This account must be uninitialized.
     ///

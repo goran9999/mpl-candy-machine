@@ -57,6 +57,7 @@ test('it transfers tokens from the payer to the destination', async (t) => {
       mintV2(umi, {
         candyMachine,
         nftMint: mint,
+        firstCreator: '' as any,
         collectionMint,
         collectionUpdateAuthority: umi.identity.publicKey,
         mintArgs: {
@@ -119,6 +120,7 @@ test('it allows minting even when the payer is different from the minter', async
         nftMint: mint,
         minter,
         collectionMint,
+        firstCreator: '' as any,
         collectionUpdateAuthority: umi.identity.publicKey,
         mintArgs: {
           tokenPayment: some({ mint: tokenMint.publicKey, destinationAta }),
@@ -175,6 +177,7 @@ test('it fails if the payer does not have enough tokens', async (t) => {
       mintV2(umi, {
         candyMachine,
         nftMint: mint,
+        firstCreator: '' as any,
         collectionMint,
         collectionUpdateAuthority: umi.identity.publicKey,
         mintArgs: {
@@ -229,6 +232,7 @@ test('it charges a bot tax if the payer does not have enough tokens', async (t) 
       mintV2(umi, {
         candyMachine,
         nftMint: mint,
+        firstCreator: '' as any,
         collectionMint,
         collectionUpdateAuthority: umi.identity.publicKey,
         mintArgs: {

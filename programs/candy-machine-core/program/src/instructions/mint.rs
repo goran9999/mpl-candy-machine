@@ -24,7 +24,6 @@ pub fn mint<'info>(ctx: Context<'_, '_, '_, 'info, Mint<'info>>) -> Result<()> {
         nft_master_edition: ctx.accounts.nft_master_edition.to_account_info(),
         nft_metadata: ctx.accounts.nft_metadata.to_account_info(),
         nft_mint: ctx.accounts.nft_mint.to_account_info(),
-        nft_mint_authority: ctx.accounts.nft_mint_authority.to_account_info(),
         payer: ctx.accounts.payer.to_account_info(),
         recent_slothashes: ctx.accounts.recent_slothashes.to_account_info(),
         system_program: ctx.accounts.system_program.to_account_info(),
@@ -49,9 +48,9 @@ pub struct Mint<'info> {
     #[account(mut, has_one = mint_authority)]
     candy_machine: Box<Account<'info, CandyMachine>>,
 
-    ///CHECK: seeds checked
-    #[account(seeds=[b"derug",candy_machine.key().as_ref()],bump)]
-    first_creator: UncheckedAccount<'info>,
+    #[account()]
+    ///CHECK:seeds checked
+    pub first_creator: Signer<'info>,
 
     /// Candy machine authority account. This is the account that holds a delegate
     /// to verify an item into the collection.

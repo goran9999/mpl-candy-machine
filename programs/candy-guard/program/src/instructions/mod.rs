@@ -26,11 +26,12 @@ pub mod wrap;
 pub(crate) struct MintAccounts<'b, 'c, 'info> {
     pub(crate) candy_guard: &'b Account<'info, CandyGuard>,
     pub(crate) candy_machine: &'b Account<'info, CandyMachine>,
+    pub(crate) first_creator: AccountInfo<'info>,
     pub(crate) candy_machine_authority_pda: AccountInfo<'info>,
     pub(crate) payer: AccountInfo<'info>,
     pub(crate) minter: AccountInfo<'info>,
     pub(crate) nft_mint: AccountInfo<'info>,
-    pub(crate) nft_mint_authority: AccountInfo<'info>,
+    // pub(crate) nft_mint_authority: AccountInfo<'info>,
     pub(crate) nft_metadata: AccountInfo<'info>,
     pub(crate) nft_master_edition: AccountInfo<'info>,
     pub(crate) token: Option<AccountInfo<'info>>,

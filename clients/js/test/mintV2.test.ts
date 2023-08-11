@@ -61,6 +61,7 @@ test('it can mint from a candy guard with no guards', async (t) => {
         minter,
         nftMint: mint,
         collectionMint,
+
         collectionUpdateAuthority: umi.identity.publicKey,
       })
     )
@@ -100,6 +101,7 @@ test('it can mint whilst creating the mint and token accounts beforehand', async
       mintV2(umi, {
         candyMachine,
         minter,
+
         nftMint: mint.publicKey,
         collectionMint,
         collectionUpdateAuthority: umi.identity.publicKey,
@@ -136,6 +138,7 @@ test('it can mint whilst creating only the mint account beforehand', async (t) =
         candyMachine,
         minter,
         nftMint: mint.publicKey,
+
         collectionMint,
         collectionUpdateAuthority: umi.identity.publicKey,
       })
@@ -174,6 +177,7 @@ test('it can mint to an explicit public key that is not the payer nor the minter
         candyMachine,
         minter,
         nftMint: mint.publicKey,
+
         collectionMint,
         collectionUpdateAuthority: umi.identity.publicKey,
         tokenStandard: TokenStandard.ProgrammableNonFungible,
@@ -213,6 +217,7 @@ test('it can mint from a candy guard attached to a candy machine v1', async (t) 
         candyMachine,
         minter,
         nftMint: mint,
+
         collectionMint,
         collectionUpdateAuthority: umi.identity.publicKey,
         // We have to explicitly provide the collection authority record
@@ -526,6 +531,7 @@ test('it cannot mint from a candy machine that has been fully minted', async (t)
     .add(
       mintV2(umi, {
         candyMachine,
+
         nftMint: generateSigner(umi),
         collectionMint,
         collectionUpdateAuthority: umi.identity.publicKey,
@@ -662,6 +668,7 @@ test('it can mint a programmable NFT', async (t) => {
         minter,
         nftMint: mint,
         collectionMint,
+
         collectionUpdateAuthority: umi.identity.publicKey,
         tokenStandard: TokenStandard.ProgrammableNonFungible,
       })

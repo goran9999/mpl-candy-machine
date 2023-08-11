@@ -19,6 +19,8 @@ pub const MAX_LABEL_SIZE: usize = 6;
 // Seed value for PDA.
 pub const SEED: &[u8] = b"candy_guard";
 
+pub const DERUG_PROGRAM: &str = "DERUGwXJu3m1DG1VNq4gP7Ppkza95P7XbeujbtSNAebu";
+
 #[account]
 #[derive(Default)]
 pub struct CandyGuard {
